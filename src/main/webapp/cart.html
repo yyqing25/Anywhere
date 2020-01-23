@@ -1,0 +1,357 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>我的购物车</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href='#css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
+<link href='#css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+<link href='#css?family=Oswald' rel='stylesheet' type='text/css'>
+<link href="css/font-awesome.css" rel="stylesheet">
+
+
+	<style type="text/css">
+		/*合计表格样式*/
+		.cart_totals{
+			float: right;
+		}
+		table,th,tr,td,#count{
+			text-align: center;
+			vertical-align: middle;
+		}
+		#prodimg{
+			height: 100%;
+			width: auto;
+		}
+		input[type='checkbox']{
+			height: 20px;
+			width: 20px;
+		}
+		input{
+			text-align: center;
+		}
+		td{
+			height: 46px;
+		}
+	</style>
+<!-- Custom Theme files -->
+<script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!--animate-->
+<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+<script src="js/wow.min.js"></script>
+	<script>
+		 new WOW().init();
+	</script>
+<!--//end-animate-->
+</head>
+<body>
+<!--头部-->
+<!--顶部-->
+<div class="top-header">
+	<div class="container">
+		<ul class="tp-hd-lft wow fadeInLeft animated" data-wow-delay=".5s">
+			<li class="hm"><a href="index.html"><i class="fa fa-home"></i></a></li>
+			<li class="prnt"><a href="index.html">首页</a></li>
+
+		</ul>
+		<ul class="tp-hd-rgt wow fadeInRight animated" data-wow-delay=".5s">
+			<li class="tol"><a href="#">个人中心</a></li>
+			<li class="sig"><a href="#" data-toggle="modal" data-target="#myModal">注册</a></li>
+			<li class="sigi"><a href="#" data-toggle="modal" data-target="#myModal4">/ 登录</a></li>
+		</ul>
+		<div class="clearfix"></div>
+	</div>
+</div>
+
+<!--团队名-->
+<div class="header">
+	<div class="container">
+		<div class="logo wow fadeInDown animated" data-wow-delay=".5s">
+			<a href="index.html">Beauty<span>Beast</span></a>
+		</div>
+
+	</div>
+</div>
+
+<!--主菜单栏-->
+<div class="footer-btm wow fadeInLeft animated" data-wow-delay=".5s">
+	<div class="container">
+		<div class="navigation">
+			<nav class="navbar navbar-default">
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="cl-effect-1">
+						<ul class="nav navbar-nav">
+							<li><a href="about.html">首页</a></li>
+							<li><a href="faq.html">找路线</a></li>
+							<li><a href="hotels.html">订酒店</a></li>
+							<li><a href="blog.html">发游记</a></li>
+							<li><a href="travels.html">找客服</a></li>
+							<li><a href="privacy.html">办签证</a></li>
+							<!-- <li>Need Help?<a href="#" data-toggle="modal" data-target="#myModal3"> / Write Us </a>  </li> -->
+							<div class="clearfix"></div>
+						</ul>
+					</nav>
+				</div>
+			</nav>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+
+<!--/头部-->
+<div class="banner-3 ">
+	<div class="container">
+		<h1 class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">我的购物车</h1>
+	</div>
+</div>
+
+
+<script>
+	$(function () {
+		/*默认全选*/
+		$("input[type='checkbox']").each(
+			function () {
+				$(this).prop("checked",1);
+			}
+		);
+		/*全选全不选*/
+		$("#all").click(function () {
+			//1.获取全选框状态
+			var status = $("#all").prop("checked");
+			// console.log(status);
+			//2.将全选框状态设置给所有复选框
+			$("input[type='checkbox']").prop("checked",status);
+		});
+		$("input[name='item']").click(function () {
+			//获取所有普通复选框,并遍历itemArr
+			var isCheckedAll = true;
+			$("input[name='item']").each(function () {
+				//判断所有的普通复选框是否全部选中
+				var status = $(this).prop("checked");
+				if(!status){
+					isCheckedAll=false;
+				}
+			});
+			$("#all").prop("checked",isCheckedAll);
+		});
+
+		/*计算总价*/
+		total();
+		$("input[type='checkbox']").click(function () {
+			total();
+		});
+
+		/*删除按钮*/
+		$(".remove").on("click", function () {
+			console.log($(this).parent);
+			$(this).parent().parent().remove();
+		});
+	});
+
+	/*合计方法*/
+	function total() {
+		var total = 0;
+		console.log("鼠标点击~");
+		$("input[name='item']").each(function () {
+			if ($(this).prop("checked") == true) {
+				$(this).parent().siblings(".sum").each(function () {
+					var sum = parseFloat($(this).text());
+					total = total + sum;
+				});
+			}
+		});
+		// console.log(total);
+		$("#total").text(total);
+	}
+
+</script>
+<!--购物车列表-->
+<div class="details">
+	<div class="container">
+		<form>
+			<table class="table table-bordered table-responsive">
+				<thead>
+				<tr>
+					<th class="product-thumbnail"><input type="checkbox" id="all"></th>
+					<th class="product-thumbnail">旅游路线</th>
+					<th class="product-name">人数</th>
+					<th class="product-quantity">单价</th>
+					<th class="product-unit-price">总价</th>
+					<th class="product-subtotal">删除</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr class="cart_item">
+					<!--试过很多样式,但是td内元素无法垂直居中-->
+					<td><input type="checkbox" name="item"></td>
+					<td><a href="#">一个很长很长的三天两夜豪华游旅游路线标题</a></td>
+					<td>
+						<div>
+							<input type="number" class="input-sm" placeholder="1" min="1" name="count">
+						</div>
+					</td>
+					<td>899/人</td>
+					<td class="sum">899</td>
+					<td><button type="button" class="btn-xs remove">x</button></td>
+				</tr>
+				<tr class="cart_item">
+					<!--试过很多样式,但是td内元素无法垂直居中-->
+					<td><input type="checkbox" name="item"></td>
+					<td><a href="#">一个很长很长的三天两夜豪华游旅游路线标题</a></td>
+					<td>
+						<div>
+							<input type="number" class="input-sm" placeholder="1" min="1" name="count">
+						</div>
+					</td>
+					<td>899/人</td>
+					<td class="sum">899</td>
+					<td><button type="button" class="btn-xs remove">x</button></td>
+				</tr>
+				<tr class="cart_item">
+					<!--试过很多样式,但是td内元素无法垂直居中-->
+					<td><input type="checkbox" name="item"></td>
+					<td><a href="#">一个很长很长的三天两夜豪华游旅游路线标题</a></td>
+					<td>
+						<div>
+							<input type="number" class="input-sm" placeholder="1" min="1" name="count">
+						</div>
+					</td>
+					<td>899/人</td>
+					<td class="sum">899</td>
+					<td><button type="button" class="btn-xs remove">x</button></td>
+				</tr>
+					<td colspan="7" style="text-align: right">
+						<span>合计:￥<span id="total">899</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button">支付</button>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</form>
+			<!--<div class="cart_totals">
+				<table id="total">
+					<tr>
+						<th>合计</th>
+						<td>￥899</td>
+					</tr>
+				</table>
+			</div>-->
+	</div>
+</div>
+<!-- /购物车列表 -->
+
+
+<!--底部-->
+<div class="copy-right">
+	<div class="container">
+
+		<div class="footer-social-icons wow fadeInDown animated animated" data-wow-delay=".5s"
+			 style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">
+			<ul>
+				<li><a class="facebook" href="#"><span>Facebook</span></a></li>
+				<li><a class="twitter" href="#"><span>Twitter</span></a></li>
+				<li><a class="flickr" href="#"><span>Flickr</span></a></li>
+				<li><a class="googleplus" href="#"><span>Google+</span></a></li>
+				<li><a class="dribbble" href="#"><span>Dribbble</span></a></li>
+			</ul>
+		</div>
+		<p class="wow zoomIn animated animated" data-wow-delay=".5s"
+		   style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">Copyright © 2020 Beauty&Beast 版权所有 | 制作 Beauty&Beast团队</p>
+	</div>
+</div>
+<!-- sign -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<section>
+				<div class="modal-body modal-spa">
+					<div class="login-grids">
+						<div class="login">
+							<div class="login-left">
+								<ul>
+									<li><a class="fb" href="#"><i></i>Sign in with Facebook</a></li>
+									<li><a class="goog" href="#"><i></i>Sign in with Google</a></li>
+									<li><a class="linkin" href="#"><i></i>Sign in with Linkedin</a></li>
+								</ul>
+							</div>
+							<div class="login-right">
+								<form>
+									<h3>Create your account </h3>
+									<input type="text" value="Name" onfocus="this.value = '';"
+										   onblur="if (this.value == '') {this.value = 'Name';}" required="">
+									<input type="text" value="Mobile number" onfocus="this.value = '';"
+										   onblur="if (this.value == '') {this.value = 'Mobile number';}" required="">
+									<input type="text" value="Email id" onfocus="this.value = '';"
+										   onblur="if (this.value == '') {this.value = 'Email id';}" required="">
+									<input type="password" value="Password" onfocus="this.value = '';"
+										   onblur="if (this.value == '') {this.value = 'Password';}" required="">
+									<input type="submit" value="CREATE ACCOUNT">
+								</form>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<p>By logging in you agree to our <a href="terms.html">Terms and Conditions</a> and <a
+								href="privacy.html">Privacy Policy</a></p>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+<!-- /sign -->
+<!-- signin -->
+<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content modal-info">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+						aria-hidden="true">×</span></button>
+			</div>
+			<div class="modal-body modal-spa">
+				<div class="login-grids">
+					<div class="login">
+						<div class="login-left">
+							<ul>
+								<li><a class="fb" href="#"><i></i>Sign in with Facebook</a></li>
+								<li><a class="goog" href="#"><i></i>Sign in with Google</a></li>
+								<li><a class="linkin" href="#"><i></i>Sign in with Linkedin</a></li>
+							</ul>
+						</div>
+						<div class="login-right">
+							<form>
+								<h3>Signin with your account </h3>
+								<input type="text" value="Enter your mobile number or Email" onfocus="this.value = '';"
+									   onblur="if (this.value == '') {this.value = 'Enter your mobile number or Email';}"
+									   required="">
+								<input type="password" value="Password" onfocus="this.value = '';"
+									   onblur="if (this.value == '') {this.value = 'Password';}" required="">
+								<h4><a href="#">Forgot password</a></h4>
+								<div class="single-bottom">
+									<input type="checkbox" id="brand" value="">
+									<label for="brand"><span></span>Remember Me.</label>
+								</div>
+								<input type="submit" value="SIGNIN">
+							</form>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<p>By logging in you agree to our <a href="terms.html">Terms and Conditions</a> and <a
+							href="privacy.html">Privacy Policy</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //signin -->
+<!--/底部-->
+</body>
+</html>
