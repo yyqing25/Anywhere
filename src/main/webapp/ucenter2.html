@@ -29,24 +29,30 @@
         }
 		.form{
 			margin:0px 0px 200px 0px;
+
 		}
         .selectdate{
             width: 100px;
         }
         .info{
+
             font-size: x-large;
+			width: 700px;
+
+			margin: 0px 0px 0px 250px;
+
         }
         [type="text"]
         {
             margin : 10px 0px 15px 5px;
         }
 
-		#tx{
+		/*#tx{
 			position:absolute;
 			right:1370px;
 			top:845px;
 
-		}
+		}*/
 		[type=file]{
 			position:absolute;
 			right:850px;
@@ -60,6 +66,14 @@
 		.copy-right{
 			width: 100%;
 		}
+		#mydd{
+			margin : 10px 0px 15px 5px;
+		}
+		.info-p{
+			text-align:left;
+		}
+
+
 
 	</style>
 </head>
@@ -145,45 +159,17 @@
 <div class="container">
 	<h1>ㅤㅤㅤ</h1>
 	<div>尊敬的用户xxx，欢迎回来。</div>
-	<a href="#">我的订单</a>
+	<a href="#"><p id="mydd">我的订单</p></a>
 	<div class="form">
 		<form class="info">
-		手机号：<input type="text"  class="city" name="phone" value="获取数据库"/><br/>
-		邮&emsp;箱：<input type="text" name="email" class="inputLabel" value="同上"/><br/>
-		昵&emsp;称：<input type="text" class="inputLabel" name="nickname" value="同上"/><br/>
-		姓&emsp;名：<input type="text" class="inputLabel" name="name" value="同上"/><br/>
-		性&emsp;别：男<input type="radio" name="gender" value="男"/>女<input type="radio" name="gender" value="女"><br/>
-		生&emsp;日：<select name="year" class="selectdate">
-						<option value="1980">1960</option>
-						<option value="1980">1970</option>
-						<option value="1980">1980</option>
-						<option value="1980">1990</option>
-						<option value="1980">2000</option>
-					</select>
-					<select name="month" class="selectdate">
-						<option value="01">01</option>
-						<option value="02">02</option>
-						<option value="03">03</option>
-						<option value="04">04</option>
-						<option value="05">05</option>
-						<option value="06">06</option>
-						<option value="07">07</option>
-						<option value="08">08</option>
-						<option value="09">09</option>
-						<option value="10">10</option>
-						<option value="11">11</option>
-						<option value="12">12</option>
-					</select>
-					<select name="day" class="selectdate">
-						<option value="01">01</option>
-						<option value="02">02</option>
-						<option value="03">03</option>
-						<option value="04">04</option>
-						<option value="05">05</option>
-					</select><br/>
-		<p id="tx">头&emsp;像：<img  img="#" /></p><input type="file" name="touxiang" /><br/>
-			<input type="submit" value="保存修改"/>
-
+		<p name="phone" class="info-p">手机号：13245678912</p><br/>
+		<p name="email" class="info-p">邮&emsp;箱：13245642315@gmail.com</p><br/>
+		<p name="nickname" class="info-p">昵&emsp;称：whatthefuck</p><br/>
+		<p name="name" class="info-p">姓&emsp;名：wtf</p><br/>
+		<p name="gender" class="info-p">性&emsp;别：man</p><br/>
+		<p name="birthday" class="info-p">生&emsp;日：1986.5.36</p><br/>
+		<p name="tx" class="info-p">头&emsp;像：<img  img="#" /></p><br/>
+		<a href="ucenter.html"><input type="button" value="修改信息"/></a>
 		</form>
 	</div>
 
