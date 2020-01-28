@@ -1,0 +1,20 @@
+1 环境配置
+    1.1 Maven
+    1.2 Tomcat 8.5.45(yyqhome)
+
+2.HTML
+    2.1 已有
+        index.html 首页
+        order.html 我的订单
+        orderhotel.html 酒店订单
+        orderroute.html 路线订单
+        regist.html 注册页
+        ucenter.html 个人中心页
+        visa.html 签证页
+    2.2未有
+        routelist.html 路线列表页
+        routedetail.html 路线详情页
+        hotellist.html 酒店列表页
+        hoteldetail.html 酒店详情页
+        diary.html 游记页
+

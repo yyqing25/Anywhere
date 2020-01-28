@@ -92,7 +92,6 @@
 							symbolSize:[5,80],
 							colorAlpha:[0.6,0.85],
 							color:['#23c2db','#9cdc82','#ffe168']
-
 						},
 						textStyle:{
 							color:'#fff'
@@ -158,6 +157,11 @@
 					}]
 				};
 				worldMap.setOption(worldMapOpt);
+
+				/*点击散点跳转到路线页*/
+				worldMap.on('click', function(params){
+					window.location.href="routelist.html"
+				});
 
 			});
 		</script>
