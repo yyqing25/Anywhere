@@ -1,9 +1,10 @@
 1 环境配置
-    1.1 Maven
-    1.2 Tomcat 8.5.45(yyqhome)
+    1.1 Maven 3.6.0 (big1910)
+    1.2 Tomcat 8.5.45 (yyqhome)
 
 2.HTML
     2.1 已有
+        -header.html 页头
         index.html 首页
         order.html 我的订单
         orderhotel.html 酒店订单

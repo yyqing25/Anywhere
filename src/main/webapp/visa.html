@@ -120,62 +120,12 @@
     </style>
 </head>
 <body>
-<!-- top-header -->
-<div class="top-header">
-    <div class="container">
-        <ul class="tp-hd-lft wow fadeInLeft animated" data-wow-delay=".5s">
-            <li class="hm"><a href="index.html"><i class="fa fa-home"></i></a></li>
-            <li class="prnt"><a href="index.html">首页</a></li>
-
-        </ul>
-        <ul class="tp-hd-rgt wow fadeInRight animated" data-wow-delay=".5s">
-            <li class="tol"><a href="#">个人中心</a></li>
-            <li class="sig"><a href="#" data-toggle="modal" data-target="#myModal">注册</a></li>
-            <li class="sigi"><a href="#" data-toggle="modal" data-target="#myModal4">/ 登录</a></li>
-        </ul>
-        <div class="clearfix"></div>
-    </div>
-</div>
-<!--- /top-header ---->
-<!--团队名-->
-<div class="header">
-    <div class="container">
-        <div class="logo wow fadeInDown animated" data-wow-delay=".5s">
-            <a href="index.html">Beauty<span>Beast</span></a>
-        </div>
-
-    </div>
-</div>
-<!--- /header ---->
-
-<!--主菜单栏-->
-<div class="footer-btm wow fadeInLeft animated" data-wow-delay=".5s">
-    <div class="container">
-        <div class="navigation">
-            <nav class="navbar navbar-default">
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-                    <nav class="cl-effect-1">
-                        <ul class="nav navbar-nav">
-                            <li><a href="about.html">首页</a></li>
-                            <li><a href="faq.html">找路线</a></li>
-                            <li><a href="hotels.html">订酒店</a></li>
-                            <li><a href="blog.html">发游记</a></li>
-                            <li><a href="travels.html">找客服</a></li>
-                            <li><a href="privacy.html">办签证</a></li>
-                            <!-- <li>Need Help?<a href="#" data-toggle="modal" data-target="#myModal3"> / Write Us </a>  </li> -->
-                            <div class="clearfix"></div>
-                        </ul>
-                    </nav>
-                </div>
-            </nav>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-</div>
-<!--/主菜单栏-->
-
-
+<!--页头-->
+<div class="header"></div>
+<script>
+    $('.header').load('_header.html');
+</script>
+<!--/页头-->
 <!--- banner-1 ---->
 <div class="banner-1">
     <div class="container">
@@ -349,27 +299,12 @@
     });*/
 </script>
 
-
-<!--底部-->
-<div class="copy-right">
-    <div class="container">
-
-        <div class="footer-social-icons wow fadeInDown animated animated" data-wow-delay=".5s"
-             style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">
-            <ul>
-                <li><a class="facebook" href="#"><span>Facebook</span></a></li>
-                <li><a class="twitter" href="#"><span>Twitter</span></a></li>
-                <li><a class="flickr" href="#"><span>Flickr</span></a></li>
-                <li><a class="googleplus" href="#"><span>Google+</span></a></li>
-                <li><a class="dribbble" href="#"><span>Dribbble</span></a></li>
-            </ul>
-        </div>
-        <p class="wow zoomIn animated animated" data-wow-delay=".5s"
-           style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">Copyright © 2020 Beauty&Beast
-            版权所有 | 制作 Beauty&Beast团队</p>
-    </div>
-</div>
-
+<!--页脚-->
+<div id="footer"></div>
+<script>
+    $('#footer').load('_footer.html');
+</script>
+<!--/页脚-->
 
 <!-- sign -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
