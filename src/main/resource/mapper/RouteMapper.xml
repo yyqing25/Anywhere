@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 门店表的映射文件 namespace值为对应接口的全路径 -->
+<mapper namespace="cn.anywhere.dao.RouteMapper">
+
+    <!--查询所有路线-->
+    <select id="selectAll" resultType="cn.anywhere.pojo.Route">
+        select * from route_prod
+    </select>
+</mapper>

@@ -32,6 +32,8 @@
 </script>
 <!--/页头-->
 
+
+
 <!--网站名-->
 <div class="banner">
     <div class="container">
@@ -57,7 +59,24 @@
         </div>
     </div>
 </div>
-
+<!--ajax与后台动态交互-->
+<script>
+    $(function () {
+        $.ajax({
+            url:"/anywhere/route/routelist",
+            success:function(routelist){
+                console.log(routelist);
+                $(".holiday").find("h3").each(function () {
+                    for(var i=0;i<routelist.length;i++){
+                        $(this).html(routelist[i].title);
+                    }
+                });
+                // $(".holiday").find("h3").html(routelist[0].title);
+            }
+        }
+        );
+    });
+</script>
 <!--热门宝贝-->
 <div class="container">
     <div class="holiday">
@@ -69,7 +88,7 @@
         <div class="col-md-6 holiday-mid animated wow fadeInUp animated" data-wow-duration="1200ms"
              data-wow-delay="500ms"
              style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
-            <h3>热门旅游路线1标题</h3>
+            <h3 id="title1">热门旅游路线1标题</h3>
             <p>热门旅游路线1的简介/热门旅游路线1的简介/热门旅游路线1的简介/热门旅游路线1的简介/热门旅游路线1的简介/热门旅游路线1的简介/</p>
         </div>
         <div class="col-md-3 holiday-left animated wow fadeInUp animated" data-wow-duration="1200ms"
