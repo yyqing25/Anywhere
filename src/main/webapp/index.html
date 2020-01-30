@@ -66,18 +66,23 @@
             url:"/anywhere/route/routelist",
             success:function(routelist){
                 console.log(routelist);
-                $(".holiday").find("h3").each(function () {
-                    for(var i=0;i<routelist.length;i++){
-                        $(this).html(routelist[i].title);
-                    }
+                $(".holiday").find("h3").each(function (i,route) {
+                    console.log(this+i+route);
+                    $(this).html(routelist[i].title);
                 });
-                // $(".holiday").find("h3").html(routelist[0].title);
+                /*for(var i=0;i<routelist.length;i++){
+                    $(".holiday").find("h3").each(function () {
+                        console.log(this);
+                        $(this).html(routelist[i].title);
+                    });
+                }*/
+
             }
         }
         );
     });
 </script>
-<!--热门宝贝-->
+<!--热门宝贝1-->
 <div class="container">
     <div class="holiday">
         <div class="col-md-3 holiday-left animated wow fadeInUp animated" data-wow-duration="1200ms"
@@ -88,7 +93,7 @@
         <div class="col-md-6 holiday-mid animated wow fadeInUp animated" data-wow-duration="1200ms"
              data-wow-delay="500ms"
              style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
-            <h3 id="title1">热门旅游路线1标题</h3>
+            <h3>热门旅游路线1标题</h3>
             <p>热门旅游路线1的简介/热门旅游路线1的简介/热门旅游路线1的简介/热门旅游路线1的简介/热门旅游路线1的简介/热门旅游路线1的简介/</p>
         </div>
         <div class="col-md-3 holiday-left animated wow fadeInUp animated" data-wow-duration="1200ms"
@@ -100,7 +105,7 @@
     </div>
 </div>
 
-<!--热门宝贝-->
+<!--热门宝贝2-->
 <div class="container">
     <div class="holiday">
         <div class="col-md-3 holiday-left animated wow fadeInUp animated" data-wow-duration="1200ms"
@@ -123,7 +128,7 @@
     </div>
 </div>
 
-<!--热门宝贝-->
+<!--热门宝贝3-->
 <div class="container">
     <div class="holiday">
         <div class="col-md-3 holiday-left animated wow fadeInUp animated" data-wow-duration="1200ms"
@@ -134,7 +139,7 @@
         <div class="col-md-6 holiday-mid animated wow fadeInUp animated" data-wow-duration="1200ms"
              data-wow-delay="500ms"
              style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
-            <h3>热门旅游路线3标题</h3>
+            <h3>热门旅游路线2标题</h3>
             <p>热门旅游路线简介...热门旅游路线简介...热门旅游路线简介...热门旅游路线简介...热门旅游路线简介...热门旅游路线简介...</p>
         </div>
         <div class="col-md-3 holiday-left animated wow fadeInUp animated" data-wow-duration="1200ms"
@@ -142,15 +147,51 @@
              style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
             <img src="images/5.jpg" class="img-responsive" alt="">
         </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<!--热门宝贝4-->
+<div class="container">
+    <div class="holiday">
         <div class="col-md-3 holiday-left animated wow fadeInUp animated" data-wow-duration="1200ms"
              data-wow-delay="500ms"
              style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
             <img src="images/4.jpg" class="img-responsive" alt="">
         </div>
+        <div class="col-md-6 holiday-mid animated wow fadeInUp animated" data-wow-duration="1200ms"
+             data-wow-delay="500ms"
+             style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
+            <h3>热门旅游路线2标题</h3>
+            <p>热门旅游路线简介...热门旅游路线简介...热门旅游路线简介...热门旅游路线简介...热门旅游路线简介...热门旅游路线简介...</p>
+        </div>
+        <div class="col-md-3 holiday-left animated wow fadeInUp animated" data-wow-duration="1200ms"
+             data-wow-delay="500ms"
+             style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
+            <img src="images/5.jpg" class="img-responsive" alt="">
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<!--热门宝贝5-->
+<div class="container">
+    <div class="holiday">
         <div class="col-md-3 holiday-left animated wow fadeInUp animated" data-wow-duration="1200ms"
              data-wow-delay="500ms"
              style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
             <img src="images/4.jpg" class="img-responsive" alt="">
+        </div>
+        <div class="col-md-6 holiday-mid animated wow fadeInUp animated" data-wow-duration="1200ms"
+             data-wow-delay="500ms"
+             style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
+            <h3>热门旅游路线2标题</h3>
+            <p>热门旅游路线简介...热门旅游路线简介...热门旅游路线简介...热门旅游路线简介...热门旅游路线简介...热门旅游路线简介...</p>
+        </div>
+        <div class="col-md-3 holiday-left animated wow fadeInUp animated" data-wow-duration="1200ms"
+             data-wow-delay="500ms"
+             style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
+            <img src="images/5.jpg" class="img-responsive" alt="">
         </div>
         <div class="clearfix"></div>
     </div>

@@ -5,8 +5,27 @@
 <!-- 门店表的映射文件 namespace值为对应接口的全路径 -->
 <mapper namespace="cn.anywhere.dao.RouteMapper">
 
+    <!--映射结果集-->
+    <resultMap id="routeList" type="cn.anywhere.pojo.Route">
+        <id property="id" column="route_id"/>
+        <result property="title" column="title"/>
+        <result property="price" column="price"/>
+        <result property="overview" column="ovreview"/>
+        <result property="detail" column="detail"/>
+        <result property="countryId" column="country_id"/>
+        <result property="stateId" column="state_id"/>
+        <result property="cityId" column="city_id"/>
+        <result property="img" column="img"/>
+        <result property="publishStatus" column="publish_status"/>
+        <result property="auditStatus" column="audit_status"/>
+        <result property="createTime" column="createtime"/>
+        <result property="modifyTime" column="modifytime"/>
+    </resultMap>
+
     <!--查询所有路线-->
-    <select id="selectAll" resultType="cn.anywhere.pojo.Route">
-        select * from route_prod
+    <select id="selectAll" resultMap="routeList">
+        select route_id,title,price,overview,detail,country_id,state_id,city_id,img from route_prod
     </select>
+
+
 </mapper>
