@@ -1,6 +1,6 @@
-package cn.anywhere.user.service;
+package cn.anywhere.service;
 
-import cn.anywhere.user.pojo.User;
+import cn.anywhere.pojo.User;
 
 public interface UserService {
     public User selectOne(int id);

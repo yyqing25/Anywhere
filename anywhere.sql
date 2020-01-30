@@ -646,3 +646,5 @@ SELECT COLUMN_NAME,column_comment FROM INFORMATION_SCHEMA.Columns WHERE table_na
 /*查询所有的表注释和字段注释
 	数据库anywheredb中所有的表注释和字段注释*/
 SELECT t.TABLE_NAME,t.TABLE_COMMENT,c.COLUMN_NAME,c.COLUMN_TYPE,c.COLUMN_COMMENT FROM information_schema.TABLES t,INFORMATION_SCHEMA.Columns c WHERE c.TABLE_NAME=t.TABLE_NAME AND t.`TABLE_SCHEMA`='anywheredb';
+
+

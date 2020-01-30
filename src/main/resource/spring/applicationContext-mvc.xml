@@ -13,7 +13,7 @@
     <!-- 配置放行静态资源文件(在访问静态资源文件时,可以直接放行,访问相应的资源文件(html/css/js/img...) -->
     <mvc:default-servlet-handler/>
     <!-- 开启包扫描 -->
-    <context:component-scan base-package="cn.anywhere.user.controller"></context:component-scan>
+    <context:component-scan base-package="cn.anywhere.controller"></context:component-scan>
     <!-- 开启注解方式配置MVC -->
     <mvc:annotation-driven></mvc:annotation-driven>
     <!-- 配置视图解析器 -->

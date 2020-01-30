@@ -12,7 +12,7 @@
         regist.html 注册页
         ucenter.html 个人中心页
         visa.html 签证页
-    2.2未有
+    2.2 未有
         routelist.html 路线列表页
         routedetail.html 路线详情页
         hotellist.html 酒店列表页

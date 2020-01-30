@@ -40,12 +40,12 @@
 		并且由框架创建Mapper接口的子类实例-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!-- 扫描所有XxxMapper接口，将接口实例的创建交给spring容器 -->
-        <property name="basePackage" value="cn.anywhere.user.dao" />
+        <property name="basePackage" value="cn.anywhere.dao" />
     </bean>
 
     <!--Spring-->
     <!-- 开启包扫描实现IOC -->
-    <context:component-scan base-package="cn.anywhere.user.service"></context:component-scan>
+    <context:component-scan base-package="cn.anywhere.service"></context:component-scan>
     <!-- 开启注解注入实现DI -->
     <context:annotation-config></context:annotation-config>
     <!-- 开启注解方式实现AOP -->

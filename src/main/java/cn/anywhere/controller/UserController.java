@@ -1,7 +1,7 @@
-package cn.anywhere.user.controller;
+package cn.anywhere.controller;
 
-import cn.anywhere.user.pojo.User;
-import cn.anywhere.user.service.UserService;
+import cn.anywhere.pojo.User;
+import cn.anywhere.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

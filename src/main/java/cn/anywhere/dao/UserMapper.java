@@ -1,6 +1,6 @@
-package cn.anywhere.user.dao;
+package cn.anywhere.dao;
 
-import cn.anywhere.user.pojo.User;
+import cn.anywhere.pojo.User;
 
 public interface UserMapper {
     public User selectOne(int id);

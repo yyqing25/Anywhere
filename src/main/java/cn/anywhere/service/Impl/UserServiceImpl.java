@@ -1,7 +1,8 @@
-package cn.anywhere.user.service;
+package cn.anywhere.service.Impl;
 
-import cn.anywhere.user.dao.UserMapper;
-import cn.anywhere.user.pojo.User;
+import cn.anywhere.dao.UserMapper;
+import cn.anywhere.pojo.User;
+import cn.anywhere.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

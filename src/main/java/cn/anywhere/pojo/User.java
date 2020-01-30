@@ -1,4 +1,4 @@
-package cn.anywhere.user.pojo;
+package cn.anywhere.pojo;
 
 public class User {
     private int id;
