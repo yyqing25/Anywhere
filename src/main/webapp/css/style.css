@@ -962,19 +962,6 @@ i.fa.fa-gift{
     -webkit-appearance: none;
     margin-top: 10px;
 }
-
-/*×¢²áÒ³Ãæ*/
-input[type="password"] {
-    width: 80%;
-    color: #9E9E9E;
-    outline: none;
-    font-size: 14px;
-    padding: 10px 10px;
-    border: 1px solid #464646;
-    -webkit-appearance: none;
-    margin-top: 10px;
-}
-
 .agent-left {
     text-align: center;
 }

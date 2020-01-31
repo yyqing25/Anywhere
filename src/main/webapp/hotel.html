@@ -1,0 +1,296 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>酒店预订</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="applijewelleryion/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<!--<link href='#css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
+<link href='#css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+<link href='#css?family=Oswald' rel='stylesheet' type='text/css'>-->
+<link href="css/font-awesome.css" rel="stylesheet">
+<!-- Custom Theme files -->
+<script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!--animate-->
+<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+<script src="js/wow.min.js"></script>
+	<script>
+		 new WOW().init();
+	</script>
+<!--//end-animate-->
+	<style>
+		p{
+			margin: 6px auto;
+		}
+		td{
+			height: 28px;
+			color: #999999;
+		}
+	</style>
+</head>
+<body>
+<!--页头-->
+<div class="header"></div>
+<script>
+	$('.header').load('_header.html');
+</script>
+<!--/页头-->
+
+
+<!--页头标题-->
+<div class="banner-1">
+	<div class="container">
+		<h1 class="wow zoomIn animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">酒店预订</h1>
+	</div>
+</div>
+<!--- /banner ---->
+<!--酒店预订-->
+<div class="selectroom">
+	<div class="container">
+		<div class="selectroom_top">
+			<div class="col-md-4 selectroom_left wow fadeInLeft animated" data-wow-delay=".5s">
+				<img src="images/h1.jpg" class="img-responsive" alt="">
+			</div>
+			<div class="col-md-8 selectroom_right wow fadeInRight animated" data-wow-delay=".5s">
+				<h2>广州天河希尔顿酒店</h2>
+				<p style="margin-top: 5px">地址:林和西横路215号</p>
+				<p style="margin-top: 20px">这里有一段很长很长很长很长很长很长很长很长很长很长很长很长的酒店介绍</p>
+				<ul>
+					<li style="width: 30%">
+						<h6>入店时间</h6>
+						<h4><input style="padding: 0;margin-top: 0" class="date" id="datepicker" type="text" placeholder="年/月/日" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '年/月/日';}" required=></h4>
+						<!--<h6>12:00 Hours</h6>-->
+					</li>
+					<li style="width: 30%">
+						<h6>离店时间</h6>
+						<h4><input style="padding: 0;margin-top: 0" class="date" id="datepicker1" type="text" placeholder="年/月/日" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '年/月/日';}" required=></h4>
+						<!--<h6>12:00 Hours</h6>-->
+					</li>
+					<li style="width: 30%">
+						<h6>客房类型</h6>
+						<h4>浪漫大床房</h4>
+					</li>
+				</ul>
+
+				<!--日期输入框-->
+				<link rel="stylesheet" href="css/jquery-ui.css" charset="utf-8"/>
+				<script src="js/jquery-ui.js"></script>
+				<script>
+					$(function () {
+						$("#datepicker,#datepicker1").datepicker();
+					});
+				</script>
+				<div class="clearfix"></div>
+				<!--<div class="grand">
+					<p>总价: </p>
+					<h3>888.00</h3>
+				</div>-->
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="selectroom_top">
+			<h2>预订信息</h2>
+			<div class="selectroom-info animated wow fadeInUp animated" data-wow-duration="1200ms" data-wow-delay="500ms" style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
+				<form>
+				<ul>
+					<li class="mr">
+						<label class="inputLabel">入住人数</label>
+						<input class="name" type="text" placeholder="入住人数" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'First Name';}" required="">
+					</li>
+					<li class="nam">
+						<label class="inputLabel">预订人姓名</label>
+						<input class="name" type="text" placeholder="姓名" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'First Name';}" required="">
+					</li>
+					<li class="nam"><!--style="width: 30%"-->
+						<label class="inputLabel">预订人身份证</label>
+						<input class="name" type="text" placeholder="身份证" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last Name';}" required="">
+					</li>
+					<li class="nam">
+						<label class="inputLabel">预订人电话</label>
+						<input class="number" type="text" placeholder="电话" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mobile Number';}" required="">
+					</li>
+					<!--<li class="spe">
+						<label class="inputLabel">备注</label>
+						<input class="special" type="text" placeholder="备注" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Special Requests';}" required="">
+					</li>-->
+					<li class="nam"  style="text-align: center">
+						<a class="view" href="#" target="_blank">预&nbsp;&nbsp;订</a>
+					</li>
+					<div class="clearfix"></div>
+				</ul>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--<div class="rooms">
+	<div class="container">
+		<div class="room-bottom">
+	&lt;!&ndash; details &ndash;&gt;
+	<div class="details">
+		<div class="container">
+			<div class="col-md-7 details-left">
+				<img src="images/16-lai.jpg" class="img-responsive" alt="">
+			</div>
+			<div class="introduce">
+				<span>200￥每间</span>
+				<li>酒店介绍</li>
+				<li>酒店介绍</li>
+				<li>酒店介绍</li>
+				<li>酒店介绍</li>
+				<li>酒店介绍</li>
+				<li>酒店介绍</li>
+				
+			</div>
+
+			<div class="booking-form">
+				<form action="/hotel_war_exploded/method1.action" method="post">
+					<div class="col-md-6">
+						<h5>名字</h5>
+						<input type="text" name="username" value="">
+						<h5>电子邮箱</h5>
+						<input type="text" name="email" value="">
+						<h5>电话</h5>
+						<input type="text" name="phone" value="">
+						<h5>时间</h5>
+						<input type="text" name="time" value="" class="time">
+
+					</div>
+					<div class="col-md-7">
+						<div class="bnr-right">
+							<h5>入住时间</h5>
+							<input class="date" id="datepicker" type="text" value="dd-mm-yyyy"
+								   onfocus="this.value = '';"
+								   onblur="if (this.value == '') {this.value = 'dd-mm-yyyy';}" required=>
+						</div>
+						<div class="bnr-right">
+							<h5>离开时间</h5>
+							<input class="date" id="datepicker1" type="text" value="dd-mm-yyyy"
+								   onfocus="this.value = '';"
+								   onblur="if (this.value == '') {this.value = 'dd-mm-yyyy';}" required=>
+						</div>
+						<h5>备注信息</h5>
+						<textarea value=""></textarea>
+						<input type="submit" value="提交">
+						<input type="reset" value="取消">
+
+					</div>
+				</form>
+				&lt;!&ndash;日期datepicker&ndash;&gt;
+				<link rel="stylesheet" href="css/jquery-ui.css" />
+				<script src="js/jquery-ui.js"></script>
+				<script>
+					$(function() {
+						$( "#datepicker,#datepicker1" ).datepicker();
+					});
+				</script>
+				&lt;!&ndash;/日期datepicker&ndash;&gt;
+			</div>
+		 </div>
+	</div>
+&lt;!&ndash;/酒店预订&ndash;&gt;
+</div>-->
+
+<!--页脚-->
+<div class="footer"></div>
+<script>
+	$('.footer').load('_footer.html');
+</script>
+
+<!--/页脚-->
+<!-- sign -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<section>
+				<div class="modal-body modal-spa">
+					<div class="login-grids">
+						<div class="login">
+							<div class="login-left">
+								<ul>
+									<li><a class="fb" href="#"><i></i>Sign in with Facebook</a></li>
+									<li><a class="goog" href="#"><i></i>Sign in with Google</a></li>
+									<li><a class="linkin" href="#"><i></i>Sign in with Linkedin</a></li>
+								</ul>
+							</div>
+							<div class="login-right">
+								<form>
+									<h3>Create your account </h3>
+									<input type="text" value="Name" onfocus="this.value = '';"
+										   onblur="if (this.value == '') {this.value = 'Name';}" required="">
+									<input type="text" value="Mobile number" onfocus="this.value = '';"
+										   onblur="if (this.value == '') {this.value = 'Mobile number';}" required="">
+									<input type="text" value="Email id" onfocus="this.value = '';"
+										   onblur="if (this.value == '') {this.value = 'Email id';}" required="">
+									<input type="password" value="Password" onfocus="this.value = '';"
+										   onblur="if (this.value == '') {this.value = 'Password';}" required="">
+									<input type="submit" value="CREATE ACCOUNT">
+								</form>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<p>By logging in you agree to our <a href="terms.html">Terms and Conditions</a> and <a
+								href="privacy.html">Privacy Policy</a></p>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+<!-- /sign -->
+<!-- signin -->
+<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content modal-info">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+						aria-hidden="true">×</span></button>
+			</div>
+			<div class="modal-body modal-spa">
+				<div class="login-grids">
+					<div class="login">
+						<div class="login-left">
+							<ul>
+								<li><a class="fb" href="#"><i></i>Sign in with Facebook</a></li>
+								<li><a class="goog" href="#"><i></i>Sign in with Google</a></li>
+								<li><a class="linkin" href="#"><i></i>Sign in with Linkedin</a></li>
+							</ul>
+						</div>
+						<div class="login-right">
+							<form>
+								<h3>Signin with your account </h3>
+								<input type="text" value="Enter your mobile number or Email" onfocus="this.value = '';"
+									   onblur="if (this.value == '') {this.value = 'Enter your mobile number or Email';}"
+									   required="">
+								<input type="password" value="Password" onfocus="this.value = '';"
+									   onblur="if (this.value == '') {this.value = 'Password';}" required="">
+								<h4><a href="#">Forgot password</a></h4>
+								<div class="single-bottom">
+									<input type="checkbox" id="brand" value="">
+									<label for="brand"><span></span>Remember Me.</label>
+								</div>
+								<input type="submit" value="SIGNIN">
+							</form>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<p>By logging in you agree to our <a href="terms.html">Terms and Conditions</a> and <a
+							href="privacy.html">Privacy Policy</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //signin -->
+<!--/底部-->
+</body>
+</html>

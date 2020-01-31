@@ -142,6 +142,7 @@
         $("#datepicker,#datepicker1").datepicker();
     });
 </script>
+<!--/日期输入框-->
 <!--签证申请表-->
 <div class="details">
     <div class="container">
@@ -181,7 +182,7 @@
                         <td class="col-md-6 agent-left wow fadeInDown animated" data-wow-delay=".5s" align="center">
                             <input class="date" id="datepicker" type="text"
                                    value="年/月/日" onfocus="this.value = '';"
-                                   onblur="if (this.value == '') {this.value = 'yyyy-mm-dd';}"
+                                   onblur="if (this.value == '') {this.value = '年/月/日';}"
                                    required name="birthday">
                         </td>
                     </tr>
@@ -232,18 +233,18 @@
 
                     <tr>
                         <td colspan="2" class="col-md-6 agent-left wow fadeInDown animated" data-wow-delay=".5s" align="center">
-                            <span style="float: left; margin-left: 100px">身份证正面&nbsp;&nbsp;&nbsp;&nbsp;<input type="file" style="display: inline-block" name="cardfont"/></span>
-                            <span style="float: right; margin-right: 100px">身份证反面&nbsp;&nbsp;&nbsp;&nbsp;<input type="file" style="display: inline-block" name="cardback"/><span>
+                            <span style="float: left; margin-left: 100px;font-size: 16px;color: #999999">身份证正面&nbsp;&nbsp;&nbsp;&nbsp;<input type="file" style="display: inline-block" name="cardfont"/></span>
+                            <span style="float: right; margin-right: 100px;font-size: 16px;color: #999999">身份证反面&nbsp;&nbsp;&nbsp;&nbsp;<input type="file" style="display: inline-block" name="cardback"/></span>
                         </td>
                     </tr>
                     <tr>
 
                         <td colspan="2" class="col-md-6 agent-left wow fadeInDown animated" data-wow-delay=".5s" align="center">
-                            <span>性别: </span>
-                            <span><input type="radio" name="gender">男&nbsp;&nbsp;<input type="radio" name="gender">女</span>
+                            <span style="font-size: 16px;color: #999999">性别: </span>
+                            <span style="font-size: 16px;color: #999999"><input type="radio" name="gender">男&nbsp;&nbsp;<input type="radio" name="gender">女</span>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <span>婚姻状况: </span>
-                            <span><input type="radio" name="sta">单身&nbsp;&nbsp;<input
+                            <span style="font-size: 16px;color: #999999">婚姻状况: </span>
+                            <span style="font-size: 16px;color: #999999"><input type="radio" name="sta">单身&nbsp;&nbsp;<input
                                     type="radio" name="sta">已婚&nbsp;&nbsp;<input type="radio" name="sta">丧偶&nbsp;&nbsp;<input
                                     type="radio" name="sta">离婚</span>
 
