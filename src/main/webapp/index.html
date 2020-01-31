@@ -66,17 +66,16 @@
             url:"/anywhere/route/routelist",
             success:function(routelist){
                 console.log(routelist);
+                /*路线标题*/
                 $(".holiday").find("h3").each(function (i,route) {
-                    console.log(this+i+route);
+                    // console.log(this+i+route);
                     $(this).html(routelist[i].title);
                 });
-                /*for(var i=0;i<routelist.length;i++){
-                    $(".holiday").find("h3").each(function () {
-                        console.log(this);
-                        $(this).html(routelist[i].title);
-                    });
-                }*/
-
+                /*路线简介*/
+                $(".holiday").find("p").each(function (i,route) {
+                    // console.log(this+i+route);
+                    $(this).html(routelist[i].overview);
+                });
             }
         }
         );
