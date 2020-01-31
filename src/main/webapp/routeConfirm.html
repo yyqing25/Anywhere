@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>旅游路线预订</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <script type="applijewelleryion/x-javascript">
+         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+    </script>
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css'/>
+    <link href="css/style_product_order.css" rel='stylesheet' type='text/css'/>
+    <link href="css/style.css" rel='stylesheet' type='text/css'/>
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href='#css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
+    <link href='#css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='#css?family=Oswald' rel='stylesheet' type='text/css'>
+    <!-- Custom Theme files -->
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+<!--    <script src="js/jquery-1.11.1.min.js"></script>-->
+    <!--animate-->
+    <link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+        $(function () {
+            /*填写旅客信息*/
+            $('#traveller_append').click(function () {
+                $('#traveller_infos').append("<div class=\"col-md-71\">\n" +
+                    "                <form method=\"post\">\n" +
+                    "                    <h4>姓名</h4>\n" +
+                    "                    <input type=\"text\" value=\"\" size=\"10%\">&nbsp;&nbsp;\n" +
+                    "                    <h4>性别</h4>\n" +
+                    "                    <label for=\"male\" style=\"color: inherit;vertical-align: middle;\">男</label>\n" +
+                    "                    <input type=\"radio\" name=\"gender\" value=\"男\" id=\"male\" style=\"width:25px;height: 25px; vertical-align: middle;\">\n" +
+                    "                    <label for=\"female\" style=\"color: inherit;vertical-align: middle;\">女</label>\n" +
+                    "                    <input type=\"radio\" name=\"gender\" value=\"女\" id=\"female\" style=\"width:25px;height: 25px;vertical-align: middle;\">&nbsp;&nbsp;\n" +
+                    "                    <h4>身份证号</h4>\n" +
+                    "                    <input type=\"text\" value=\"\" size=\"20%\">&nbsp;&nbsp;\n" +
+                    "                    <h4>手机号</h4>\n" +
+                    "                    <input type=\"text\" value=\"\" size=\"15%\">\n" +
+                    "                    <h4>备注</h4>\n" +
+                    "                    <input type=\"text\" value=\"\"/>"+
+                    "                </form>\n" +
+                    "            </div>");
+            });
+
+        });
+    </script>
+
+
+</head>
+<body>
+<!--页头-->
+<div class="header"></div>
+<script>
+    $('.header').load('_header.html');
+</script>
+<!--/页头-->
+
+<!--网站名-->
+<div class="banner-3">
+    <div class="container">
+        <h1 class="wow zoomIn animated animated" data-wow-delay=".5s"
+            style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">旅游路线预订</h1>
+    </div>
+</div>
+
+<!--日期输入框-->
+<link rel="stylesheet" href="css/jquery-ui.css" charset="utf-8"/>
+<script src="js/jquery-ui.js"></script>
+<script>
+    $(function () {
+        $("#datepicker,#datepicker1").datepicker();
+    });
+</script>
+<!--/日期输入框-->
+
+<!--产品详情-->
+<link href="css/style_product_details.css" rel='stylesheet' type='text/css' />
+<div class="details">
+
+    <div class="container">
+        <h3>请确认订单信息</h3>
+        <!--缩略图-->
+        <div class="col-md-70 details-left">
+            <img src="images/product3.jpg" class="img-responsive" alt="" width="100%" height="auto">
+        </div>
+        <!--产品基本信息-->
+        <div class="col-md-5 details-right">
+            <li style="text-align: left">路线：xxxxxxxxx豪华xx日游</li>
+            <li style="text-align: left">250元~ 300元/位</li>
+            <li style="text-align: left">支持WX/ZFB/XYK支付</li>
+        </div>
+        <div class="clearfix"> </div>
+        <!--订单基本信息-->
+        <div class="booking-form0">
+            <div class="col-md-7">
+                <form method="post" >
+                    <link rel="stylesheet" href="css/jquery-ui.css" charset="utf-8"/>
+                    <script src="js/jquery-ui.js"></script>
+                    <h4 style="text-align: left">出行日期&nbsp;&nbsp;</h4>
+                    <input class="date" id="datepicker" type="text"
+                           value="年/月/日" onfocus="this.value = '';"
+                           onblur="if (this.value == '') {this.value = '年/月/日';}">
+                    <h4 style="display: inline;">库存余票：xx张/充足&nbsp;&nbsp;</h4>
+                    <h4 class="mem" style="display: inline">旅客人数&nbsp;&nbsp;</h4>
+                    <input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control0 input-small" size="50">
+                </form>
+            </div>
+
+        </div><br/>
+        <!--旅客信息-->
+        <div class="booking-form1" id="traveller_infos">
+            <div class="col-md-71" >
+                <p>请填写旅客信息：</p>
+                <form method="post">
+                    <h4>姓名</h4>
+                    <input type="text" value="" size="10%">&nbsp;&nbsp;
+                    <h4>性别</h4>
+                    <label for="male" style="color: inherit;vertical-align: middle;">男</label>
+                    <input type="radio" name="gender" value="男" id="male" style="width:25px;height: 25px; vertical-align: middle;">
+                    <label for="female" style="color: inherit;vertical-align: middle;">女</label>
+                    <input type="radio" name="gender" value="女" id="female" style="width:25px;height: 25px;vertical-align: middle;">&nbsp;&nbsp;
+                    <h4>身份证号</h4>
+                    <input type="text" value="" size="20%">&nbsp;&nbsp;
+                    <h4>手机号</h4>
+                    <input type="text" value="" size="15%">
+                    <h4>备注</h4>
+                    <input type="text" value=""/>
+                </form>
+            </div>
+
+
+        </div>
+        <div class="booking-form0" style="text-align: right">
+
+            <input type="button" id="traveller_append" value="增加旅客信息" style="vertical-align: baseline"/>
+            <input type="reset" value="重置">
+            <input type="submit" value="提交订单">
+        </div>
+    </div>
+</div>
+<link href="css/style.css" rel='stylesheet' type='text/css'/>
+<!--页脚-->
+<div class="footer"></div>
+<script>
+    $('.footer').load('_footer.html');
+</script>
+<!--/页脚-->
+
+
+<!-- sign -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <section>
+                <div class="modal-body modal-spa">
+                    <div class="login-grids">
+                        <div class="login">
+                            <div class="login-left">
+                                <ul>
+                                    <li><a class="fb" href="#"><i></i>Sign in with Facebook</a></li>
+                                    <li><a class="goog" href="#"><i></i>Sign in with Google</a></li>
+                                    <li><a class="linkin" href="#"><i></i>Sign in with Linkedin</a></li>
+                                </ul>
+                            </div>
+                            <div class="login-right">
+                                <form>
+                                    <h3>Create your account </h3>
+                                    <input type="text" value="Name" onfocus="this.value = '';"
+                                           onblur="if (this.value == '') {this.value = 'Name';}" required="">
+                                    <input type="text" value="Mobile number" onfocus="this.value = '';"
+                                           onblur="if (this.value == '') {this.value = 'Mobile number';}" required="">
+                                    <input type="text" value="Email id" onfocus="this.value = '';"
+                                           onblur="if (this.value == '') {this.value = 'Email id';}" required="">
+                                    <input type="password" value="Password" onfocus="this.value = '';"
+                                           onblur="if (this.value == '') {this.value = 'Password';}" required="">
+                                    <input type="submit" value="CREATE ACCOUNT">
+                                </form>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <p>By logging in you agree to our <a href="terms.html">Terms and Conditions</a> and <a
+                                href="privacy.html">Privacy Policy</a></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- /sign -->
+<!-- signin -->
+<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-info">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body modal-spa">
+                <div class="login-grids">
+                    <div class="login">
+                        <div class="login-left">
+                            <ul>
+                                <li><a class="fb" href="#"><i></i>Sign in with Facebook</a></li>
+                                <li><a class="goog" href="#"><i></i>Sign in with Google</a></li>
+                                <li><a class="linkin" href="#"><i></i>Sign in with Linkedin</a></li>
+                            </ul>
+                        </div>
+                        <div class="login-right">
+                            <form>
+                                <h3>Signin with your account </h3>
+                                <input type="text" value="Enter your mobile number or Email" onfocus="this.value = '';"
+                                       onblur="if (this.value == '') {this.value = 'Enter your mobile number or Email';}"
+                                       required="">
+                                <input type="password" value="Password" onfocus="this.value = '';"
+                                       onblur="if (this.value == '') {this.value = 'Password';}" required="">
+                                <h4><a href="#">Forgot password</a></h4>
+                                <div class="single-bottom">
+                                    <input type="checkbox" id="brand" value="">
+                                    <label for="brand"><span></span>Remember Me.</label>
+                                </div>
+                                <input type="submit" value="SIGNIN">
+                            </form>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <p>By logging in you agree to our <a href="terms.html">Terms and Conditions</a> and <a
+                            href="privacy.html">Privacy Policy</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //signin -->
+<!--/底部-->
+
+</body>
+
+</html>

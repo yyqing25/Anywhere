@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>路线详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <script type="applijewelleryion/x-javascript">
+         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+    </script>
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css'/>
+    <link href="css/style.css" rel='stylesheet' type='text/css'/>
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- Custom Theme files -->
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <!--animate-->
+    <link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+        $(function () {
+            $('#traveller_append').click(function () {
+                $('.booking-form').append("<br/><div class=\"col-md-6\">\n" +
+                    "                <form>\n" +
+                    "                    <h5>姓名</h5>\n" +
+                    "                    <input type=\"text\" value=\"\">\n" +
+                    "                    <h5>性别</h5>\n" +
+                    "                    <input type=\"text\" value=\"\">\n" +
+                    "                    <h5>身份证号</h5>\n" +
+                    "                    <input type=\"text\" value=\"\">\n" +
+                    "                    <h5>手机号</h5>\n" +
+                    "                    <input type=\"text\" value=\"\">\n" +
+                    "                    <h5>出发时间</h5>\n" +
+                    "                    <input type=\"text\" value=\"\" class=\"time\">\n" +
+                    "                </form>\n" +
+                    "            </div>");
+            });
+        });
+    </script>
+    <!--日期输入框-->
+    <link rel="stylesheet" href="css/jquery-ui.css" charset="utf-8"/>
+    <script src="js/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker,#datepicker1").datepicker();
+        });
+    </script>
+    <!--/日期输入框-->
+
+</head>
+<body>
+<!--页头-->
+<div class="header"></div>
+<script>
+    $('.header').load('_header.html');
+</script>
+<!--/页头-->
+
+<!--网站名-->
+<div class="banner-3">
+    <div class="container">
+        <h1 class="wow zoomIn animated animated" data-wow-delay=".5s"
+            style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">旅游路线</h1>
+    </div>
+</div>
+<div style="display:flex;justify-context:centet;align-items:center;text-align: center" class="container">
+    <!--路线标题-->
+    <div style="margin: 0 auto;display: block" class="col-md-7 bann-info wow fadeInRight animated" data-wow-delay=".5s">
+       <!-- <div class="ban-top" style="margin:0 auto">
+        </div>-->
+        <div class="sear">
+            <h2>路线：xxxxxxxxx豪华xx日游</h2>
+        </div>
+    </div>
+</div>
+
+
+
+<!--产品详情-->
+<link href="css/style_product_details.css" rel='stylesheet' type='text/css' />
+<div class="details" style="padding-top: 0">
+    <div class="container">
+        <div class="col-md-7 details-left">
+            <img src="images/product3.jpg" class="img-responsive" alt="">
+        </div>
+        <div class="col-md-5 details-right">
+            <span style="box-sizing: border-box; "><strong>250元~</strong> 300元/位</span>
+            <li style="text-align: left">按照最优惠的价格组团</li>
+            <li style="text-align: left">支持WX/ZFB/XYK支付</li>
+            <li style="text-align: left">无手续费</li>
+            <p style="text-align: left"> 路线简介：这是一个历史悠久的名胜古迹，文明遐迩。此地物华天宝，人杰地灵。值得前去的旅游胜地。</p>
+        </div>
+        <div class="clearfix"> </div>
+        <!--提交表单-->
+        <div class="booking-form0">
+            <div class="col-md-7">
+                <form method="post" >
+                    <link rel="stylesheet" href="css/jquery-ui.css" charset="utf-8"/>
+                    <script src="js/jquery-ui.js"></script>
+                    <h4 style="text-align: left">出行日期&nbsp;&nbsp;</h4>
+                    <input class="date" id="datepicker" type="text"
+                           value="年/月/日" onfocus="this.value = '';"
+                           onblur="if (this.value == '') {this.value = '年/月/日';}">
+                    <h4 style="display: inline;">库存余票：xx张/充足&nbsp;&nbsp;</h4>
+                    <h4 class="mem" style="display: inline">旅客人数&nbsp;&nbsp;</h4>
+                    <input min="1" type="number" id="quantity" name="quantity" value="1" class="form-control0 input-small" size="50">
+                </form>
+            </div>
+            <!--跳转到订单信息填写页-->
+            <a href="routeConfirm.html">
+                <input type="submit" value="确认下单">
+            </a>
+            <input type="reset" value="重置">
+        </div>
+        <div class="details-top">
+            <h3>下单须知(路线详情)</h3>
+            <h5>在线下单支付，立省10元！</h5>
+            <h6>有效期 : 2020年xx月xx日~2020年xx月xx日</h6>
+            <li>预订流程 交通信息 费用说明 退款政策 推荐行程 点评</li><!--todo 连接-->
+            <h4>预订流程</h4>
+            <li>第一条第一条第一条第一条第一条第一条第一条第一条第一条</li>
+            <li>第二条第一条第一条第一条第一条第一条第一条第一条第一条第一条 </li>
+            <h4>交通信息</h4>
+            <li>第一条第一条第一条第一条第一条第一条第一条第一条第一条</li>
+            <li>第二条第一条第一条第一条第一条第一条第一条第一条第一条第一条 </li>
+            <h4>费用说明</h4>
+            <li>第一条第一条第一条第一条第一条第一条第一条第一条第一条</li>
+            <li>第二条第一条第一条第一条第一条第一条第一条第一条第一条第一条 </li>
+            <h4>退款政策</h4>
+            <li>第一条第一条第一条第一条第一条第一条第一条第一条第一条</li>
+            <li>第二条第一条第一条第一条第一条第一条第一条第一条第一条第一条 </li>
+            <h4>点评</h4>
+            <li>第一条第一条第一条第一条第一条第一条第一条第一条第一条</li>
+            <li>第二条第一条第一条第一条第一条第一条第一条第一条第一条第一条 </li>
+            <h4>补充说明</h4>
+            <p>这里有一段话</p>
+        </div>
+    </div>
+</div>
+<link href="css/style.css" rel='stylesheet' type='text/css'/>
+<!--页脚-->
+<div class="footer"></div>
+<script>
+    $('.footer').load('_footer.html');
+</script>
+<!--/页脚-->
+</body>
+</html>

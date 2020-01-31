@@ -1,0 +1,608 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>商品详情页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+
+    <!--商品导航栏样式-->
+    <style type="text/css">
+        .main {
+            position: fixed;
+            width: 0;
+            /*overflow: visible;*/
+            z-index: 100;
+        }
+
+        .main .nav {
+            display: inline-block;
+            float: right;
+            clear: both;
+        }
+
+        /*子菜单*/
+        .main .a {
+            position: relative;
+            left: 100%;
+            padding: 10px 0px 10px 30px;
+            width: 140px;
+            margin: 0px;
+            background: #8DC2BC;
+            x-box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.5);
+            box-shadow: 8px 0 8px -8px rgba(0, 0, 0, 0.5);
+        }
+
+        .main .a:hover {
+            position: relative;
+            left: 100%;
+            margin-left: 0px;
+            background-color: rgba(27, 79, 147, 0.5);
+            box-shadow: 0 -8px 8px -8px rgba(0, 0, 0, 0.5),
+            0 8px 8px -8px rgba(0, 0, 0, 0.5);
+        }
+
+        .a div {
+            width: 100%;
+        }
+
+        .a span {
+            width: 100%;
+        }
+
+        /*子菜单*/
+        .main .a1 {
+            position: relative;
+            left: 100%;
+            padding: 10px 10px 10px 10px;
+            width: 180px;
+            margin: 140px;
+            background: #8DC2BC;
+            x-box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.5);
+            box-shadow: 8px 0 8px -8px rgba(0, 0, 0, 0.5);
+
+            overflow: hidden;
+            display: none;
+        }
+
+        .main .a1:hover {
+            position: relative;
+            left: 100%;
+            margin-left: 140px;
+            background-color: rgba(27, 79, 147, 0.5);
+            box-shadow: 0 -8px 8px -8px rgba(0, 0, 0, 0.5),
+            0 8px 8px -8px rgba(0, 0, 0, 0.5);
+
+        }
+
+        /*子菜单*/
+        /*子菜单*/
+        .main .a2 {
+            position: relative;
+            left: 100%;
+            padding: 10px 10px 10px 20px;
+            margin: 320px;
+            background: #8DC2BC;
+            x-box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.5);
+            box-shadow: 8px 0 8px -8px rgba(0, 0, 0, 0.5);
+
+            overflow: hidden;
+            display: none;
+        }
+
+        .main .a2:hover {
+            position: relative;
+            left: 100%;
+            margin-left: 320px;
+            background-color: rgba(27, 79, 147, 0.5);
+            box-shadow: 0 -8px 8px -8px rgba(0, 0, 0, 0.5),
+            0 8px 8px -8px rgba(0, 0, 0, 0.5);
+
+        }
+
+        .main .opt {
+            display: inline-block;
+            color: #fff;
+            font-family: 'Droid Sans', sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .main a:hover #bg1 {
+            background: #539770;
+        }
+
+        .main a:hover #bg2 {
+            background: #4B7D74;
+        }
+
+        .main a:hover #bg3 {
+            background: #8DC2BC;
+        }
+
+        .main a:hover #bg4 {
+            background: #EDD6B4;
+        }
+
+        .main a:hover #bg5 {
+            background: #BE7467;
+        }
+
+        .main a:hover #bg6 {
+            background: #E2AE63;
+        }
+
+        .main a:hover #bg7 {
+            background: #E2AE63;
+        }
+
+        .main a:hover {
+            background: #E2AE63;
+        }
+    </style>
+    <!--商品导航栏样式-->
+
+    <script type="applijewelleryion/x-javascript">
+         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+
+
+    </script>
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css'/>
+    <link href="css/style_product_list.css" rel='stylesheet' type='text/css'/>
+    <link href='#css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
+    <link href='#css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='#css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- Custom Theme files -->
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!--animate-->
+    <link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <script src="js/wow.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script>
+
+        $(function () {
+            var date_leave = new Date().getTime();
+            var date_enter = new Date().getTime();
+            var date_curr = new Date().getTime();
+
+            /*on方法 委派事件给div 二级菜单事件*/
+            $('.a1').on("mouseenter", 'div', function () {
+                date_enter = new Date().getTime();
+                var selc = $(this).text();
+                var flag = false;
+                var province_id = "";
+                var dy = 0;
+                /*获取纵坐标，用于定位*/
+                dy = getTop(this);
+                /*判断目的省份*/
+                $.getJSON("./json/chinese_province.json", "", function (provinces) {
+                    $.each(provinces, function (i, item) {
+                        if ($.trim(selc) === $.trim(item.name)) {
+                            province_id = $.trim(item.id);
+                            flag = true;
+                            return false;
+                        }
+                    });
+                    /*遍历城市，加载三级菜单*/
+                    if (flag === true) {
+                        $.getJSON("./json/chinese_city.json", "", function (cities) {　 //each循环 使用$.each方法遍历返回的数据date
+                            $(".a2").empty();
+                            $(".a2").css("overflow", "visible");
+                            $(".a2").css("display", "block");
+
+                            $.each(cities, function (i, item) {
+                                    if ($.trim(province_id) === $.trim(i)) {
+                                        $.each(item, function (j, item_city) {
+                                            var num = new Number(j);
+                                            $(".a2").append("<a href=\"#\">\n" +
+                                                "<div><span class=\"opt\" id=\"dg" + num.toString() + "\">" + item_city["name"] + "</span></div>" +
+                                                "</a>");
+                                        })
+                                    }
+                                }
+                            );
+
+                            /*菜单定位*/
+                            $(".a2").css("top", dy - 720);
+                            $(".a2").css("vertical-align", "text-top");
+                        });
+
+                    }
+                });
+
+
+            });
+
+            /*一级菜单事件*/
+            $('span[id^="bg"]').mouseenter(function () {
+                date_enter = new Date().getTime();
+                /*国家/洲*/
+                var selc = $(this).text();
+                var dy = getTop(this);
+                if ($.trim(selc) === "中国" || $.trim(selc) === "热门推荐") {
+                    $.getJSON("./json/chinese_province.json", "", function (provinces) {
+                        $(".a1").empty();
+                        $(".a1").css("overflow", "visible");
+                        $(".a1").css("display", "block");
+                        var a = provinces.length;
+                        var i = 0;
+                        while (a > 0) {
+                            var province = provinces[i++];
+                            var num = new Number(i);
+                            $(".a1").append("<a href=\"#\">\n" +
+                                "<div><span class=\"opt\" id=\"cg" + num.toString() + "\">" + province["name"] + "</span></div>" +
+                                "</a>");
+
+                            a--;
+                        }
+                    });
+                    $(".a1").css("top", dy - 540);
+                    $(".a1").css("vertical-align", "text-top");
+                    return false;
+                }
+            });
+
+            /*二三级菜单的隐藏*/
+            $('.a2').on("mouseout", function () {
+                date_leave = new Date().getTime();
+
+                $('.a1').on("mouseout", function () {
+                    date_leave = new Date().getTime();
+
+                    $('.a').on("mouseout", function () {
+                        date_leave = new Date().getTime();
+                        if (date_leave > date_enter) {
+                            setTimeout(function () {
+                                date_curr = new Date().getTime();
+                                if (date_leave > date_enter && date_curr - date_enter > 5000) {
+                                    $(".a2").hide();
+                                    $(".a1").hide();
+                                    date_curr = 0;
+                                    date_enter = 0;
+                                    date_leave = 0;
+                                } else {
+                                    return false;
+                                }
+                            }, 7000);
+
+                        } else {
+                            return false;
+                        }
+                    });
+                });
+            });
+
+
+            $('.a1').on("mouseout", function () {
+                date_leave = new Date().getTime();
+
+                $('.a').on("mouseout", function () {
+                    date_leave = new Date().getTime();
+                    if (date_leave > date_enter) {
+                        setTimeout(function () {
+                            date_curr = new Date().getTime();
+                            if (date_leave > date_enter && date_curr - date_enter > 5000) {
+                                $(".a2").hide();
+                                $(".a1").hide();
+                                date_curr = 0;
+                                date_enter = 0;
+                                date_leave = 0;
+                            } else {
+                                return false;
+                            }
+                        }, 7000);
+
+                    } else {
+                        return false;
+                    }
+                });
+            });
+
+            $('.a').on("mouseout", function () {
+                date_leave = new Date().getTime();
+                if (date_leave > date_enter) {
+                    setTimeout(function () {
+                        date_curr = new Date().getTime();
+                        if (date_leave > date_enter && date_curr - date_enter > 5000) {
+                            $(".a2").hide();
+                            $(".a1").hide();
+                            date_curr = 0;
+                            date_enter = 0;
+                            date_leave = 0;
+                        } else {
+                            return false;
+                        }
+                    }, 7000);
+
+                } else {
+                    return false;
+                }
+            });
+        });
+
+        /*获取纵坐标*/
+        function getTop(e) {
+
+            var offset = e.offsetTop;
+            if (e.offsetParent != null) offset += getTop(e.offsetParent);
+            return offset;
+
+        }
+
+        //获取元素的横坐标
+        function getLeft(e) {
+
+            var offset = e.offsetLeft;
+            if (e.offsetParent != null) offset += getLeft(e.offsetParent);
+            return offset;
+
+        }
+
+        new WOW().init();
+    </script>
+
+    <!--.hide-->
+    <script>
+        $(function () {
+
+            // 菜单隐藏和显示
+            $("#button").click(function () {
+                if ($.trim($("#product_list").css("overflow")) === "hidden" || $.trim($("#product_list").css("display")) === "none") {//如果当前隐藏
+                    $("#product_list").show();//那么就显示div
+                } else {//否则
+                    $("#product_list").hide();//就隐藏div
+                    $(".a1").empty();
+                    $(".a1").css("overflow", "hidden");
+                    $(".a1").css("display", "none");
+                    $(".a2").empty();
+                    $(".a2").css("overflow", "hidden");
+                    $(".a2").css("display", "none");
+                }
+                return false;
+            });
+        });
+    </script>
+
+</head>
+<body>
+<!--页头-->
+<div class="header"></div>
+<script>
+    $('.header').load('_header.html');
+</script>
+<!--/页头-->
+
+<!--网站名-->
+
+<!--- banner ---->
+<div class="banner-3 ">
+    <div class="container">
+        <h1 class="wow zoomIn animated animated" data-wow-delay=".5s"
+            style="visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">立刻开始美好旅途 </h1>
+    </div>
+</div>
+<!--- /banner ---->
+
+<!--商品导航栏
+<div class="main" style="width: 200px">
+    <h4>请选择目的地</h4>
+    <h4><a href="#" id="button">隐藏/显示导航栏</a></h4>
+</div>
+<br/><br/>
+
+
+<div class="main" id="product_list">
+    <div class="nav">
+        <div class="a">
+            <a href="#">
+                <div><span class="opt" id="bg1">热门推荐</span></div>
+            </a>
+            <a href="#">
+                <div><span class="opt" id="bg2">中国</span></div>
+            </a>
+            <a href="#">
+                <div><span class="opt" id="bg3">日韩 东南亚</span></div>
+            </a>
+            <a href="#">
+                <div><span class="opt" id="bg4">亚洲其他</span></div>
+            </a>
+            <a href="#">
+                <div><span class="opt" id="bg5">欧洲</span></div>
+            </a>
+            <a href="#">
+                <div><span class="opt" id="bg6">大洋洲 北美</span></div>
+            </a>
+            <a href="#">
+                <div><span class="opt" id="bg7">非洲 南美</span></div>
+            </a>
+
+        </div>
+    </div>
+</div>
+<div class="main" id="province_list" style="position: absolute; z-index: 99; float:left;">
+    <div class="nav">
+        <div class="a1">
+            <a href="#">
+                <div><span class="opt" id="cg1">热门推荐</span></div>
+            </a>
+
+
+        </div>
+    </div>
+</div>
+<div class="main" id="city_list" style="position: absolute; z-index: 98; float: left;">
+    <div class="nav">
+        <div class="a2">
+            <a href="#">
+                <div><span class="opt" id="dg1">热门推荐</span></div>
+            </a>
+        </div>
+    </div>
+</div>
+
+商品导航栏-->
+
+<div style="display:flex;justify-context:centet;align-items:center;text-align: center" class="container">
+
+    <!--搜索内容体-->
+    <div style="margin: 0 auto;display: block" class="col-md-7 bann-info wow fadeInRight animated" data-wow-delay=".5s">
+        <h2>搜索目的地</h2>
+        <div class="ban-top" style="margin:0 auto">
+            <input style="width: 80%;height: 40px" class="city" type="text" value="目的地" onfocus="this.value = '';"
+                   onblur="if (this.value == '') {this.value = '目的地';}">
+        </div>
+        <div class="sear">
+            <form action="#">
+                <button class="seabtn">搜索</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!--- details ---->
+<div class="details" style="padding-top: 0">
+    <div class="container">
+        <div class="details-top">
+            <div class="col-md-3 details-left wow fadeInLeft animated" data-wow-delay=".5s">
+                <img src="images/product2.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="col-md-6 details-middle wow fadeInUp animated" data-wow-delay=".5s">
+                <h3><a href="route.html">XXX旅游景点xx日游</a></h3>
+                <p>xx国 xx省 xx城市</p>
+                <li><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>浏览 99999</li>
+                <li><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>访客推荐 9999</li>
+                <div class="clearfix"></div>
+                <p>便利设施</p>
+                <li><i class="fa fa-car"></i></li>
+                <li><i class="fa fa-cutlery"></i></li>
+                <li><i class="fa fa-suitcase"></i></li>
+            </div>
+            <div class="col-md-3 details-right wow fadeInRight animated" data-wow-delay=".5s">
+                <h5>700 元</h5>
+                <a href="route.html" class="view">了解详情</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="details-top">
+            <div class="col-md-3 details-left wow fadeInLeft animated" data-wow-delay=".5s">
+                <img src="images/product2.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="col-md-6 details-middle wow fadeInUp animated" data-wow-delay=".5s">
+                <h3><a href="route.html">XXX旅游景点xx日游</a></h3>
+                <p>xx国 xx省 xx城市</p>
+                <li><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>浏览 99999</li>
+                <li><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>访客推荐 9999</li>
+                <div class="clearfix"></div>
+                <p>便利设施</p>
+                <li><i class="fa fa-car"></i></li>
+                <li><i class="fa fa-cutlery"></i></li>
+                <li><i class="fa fa-suitcase"></i></li>
+            </div>
+            <div class="col-md-3 details-right wow fadeInRight animated" data-wow-delay=".5s">
+                <h5>700 元</h5>
+                <a href="route.html" class="view">了解详情</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="details-top">
+            <div class="col-md-3 details-left wow fadeInLeft animated" data-wow-delay=".5s">
+                <img src="images/product2.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="col-md-6 details-middle wow fadeInUp animated" data-wow-delay=".5s">
+                <h3><a href="route.html">XXX旅游景点xx日游</a></h3>
+                <p>xx国 xx省 xx城市</p>
+                <li><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>浏览 99999</li>
+                <li><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>访客推荐 9999</li>
+                <div class="clearfix"></div>
+                <p>便利设施</p>
+                <li><i class="fa fa-car"></i></li>
+                <li><i class="fa fa-cutlery"></i></li>
+                <li><i class="fa fa-suitcase"></i></li>
+            </div>
+            <div class="col-md-3 details-right wow fadeInRight animated" data-wow-delay=".5s">
+                <h5>700 元</h5>
+                <a href="route.html" class="view">了解详情</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="details-top">
+            <div class="col-md-3 details-left wow fadeInLeft animated" data-wow-delay=".5s">
+                <img src="images/product2.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="col-md-6 details-middle wow fadeInUp animated" data-wow-delay=".5s">
+                <h3><a href="route.html">XXX旅游景点xx日游</a></h3>
+                <p>xx国 xx省 xx城市</p>
+                <li><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>浏览 99999</li>
+                <li><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>访客推荐 9999</li>
+                <div class="clearfix"></div>
+                <p>便利设施</p>
+                <li><i class="fa fa-car"></i></li>
+                <li><i class="fa fa-cutlery"></i></li>
+                <li><i class="fa fa-suitcase"></i></li>
+            </div>
+            <div class="col-md-3 details-right wow fadeInRight animated" data-wow-delay=".5s">
+                <h5>700 元</h5>
+                <a href="route.html" class="view">了解详情</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="details-top">
+            <div class="col-md-3 details-left wow fadeInLeft animated" data-wow-delay=".5s">
+                <img src="images/product2.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="col-md-6 details-middle wow fadeInUp animated" data-wow-delay=".5s">
+                <h3><a href="route.html">XXX旅游景点xx日游</a></h3>
+                <p>xx国 xx省 xx城市</p>
+                <li><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>浏览 99999</li>
+                <li><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>访客推荐 9999</li>
+                <div class="clearfix"></div>
+                <p>便利设施</p>
+                <li><i class="fa fa-car"></i></li>
+                <li><i class="fa fa-cutlery"></i></li>
+                <li><i class="fa fa-suitcase"></i></li>
+            </div>
+            <div class="col-md-3 details-right wow fadeInRight animated" data-wow-delay=".5s">
+                <h5>700 元</h5>
+                <a href="route.html" class="view">了解详情</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="details-top">
+            <div class="col-md-3 details-left wow fadeInLeft animated" data-wow-delay=".5s">
+                <img src="images/product2.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="col-md-6 details-middle wow fadeInUp animated" data-wow-delay=".5s">
+                <h3><a href="route.html">XXX旅游景点xx日游</a></h3>
+                <p>xx国 xx省 xx城市</p>
+                <li><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>浏览 99999</li>
+                <li><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>访客推荐 9999</li>
+                <div class="clearfix"></div>
+                <p>便利设施</p>
+                <li><i class="fa fa-car"></i></li>
+                <li><i class="fa fa-cutlery"></i></li>
+                <li><i class="fa fa-suitcase"></i></li>
+            </div>
+            <div class="col-md-3 details-right wow fadeInRight animated" data-wow-delay=".5s">
+                <h5>700 元</h5>
+                <a href="route.html" class="view">了解详情</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!--- /details ---->
+
+<!--页脚-->
+<div class="footer"></div>
+<script>
+    $('.footer').load('_footer.html');
+</script>
+
+<!--/页脚-->
+
+</body>
+</html>
